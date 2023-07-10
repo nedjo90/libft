@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/10 15:14:04 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/10 14:48:17 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/10 14:53:33 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-
-int	main(int argc, char **argv)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	(void)argc;
-	i = 0;
-	while (argv[1][i])
+	if (c >= 97 && c <= 122)
 	{
-		// argv[1][i] = ft_tolower(argv[1][i]);
-		// argv[1][i] = ft_toupper(argv[1][i]);
-		write(1, &argv[1][i], 1);
-		i++;
+		c = c - 97 + 65;
 	}
-	return (0);
+	return (c);
 }
