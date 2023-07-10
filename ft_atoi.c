@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 00:14:47 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 00:15:58 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 00:38:23 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-int	ft_isalnum(int c);
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-
-int	main(int argc, char **argv)
+int	atoi(const char *str)
 {
 	int	i;
+	int	s;
+	int	res;
 
-	(void)argc;
 	i = 0;
-	while (ft_isprint(argv[1][i]) != 0)
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == 43 || str[i] == 45)
 	{
-		write(1, &argv[1][i], 1);
+		if (str[i] == 45)
+			s *= -1;
 		i++;
 	}
-	return (0);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		res *= 10;
+		res += (str[i] - 48);
+		if (s < 0)
+		{
+			res *= s;
+			s *= -1;
+		}
+		i++;
+	}
+	return (res);
 }

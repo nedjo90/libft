@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 00:14:47 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 00:11:46 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 00:14:06 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-int	ft_isprint(int c);
-int	ft_isascii(int c);
-int	ft_isalnum(int c);
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-
-int	main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	(void)argc;
-	i = 0;
-	while (ft_isprint(argv[1][i]) != 0)
-	{
-		write(1, &argv[1][i], 1);
-		i++;
-	}
+	if (c >= 65 && c <= 90)
+		return (1);
+	else if (c >= 97 && c <= 122)
+		return (1);
 	return (0);
 }
