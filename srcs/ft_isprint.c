@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 13:00:08 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 13:04:28 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/10 15:19:01 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:22:37 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int	ft_isprint(int c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	if (needle[i] == '\0')
-		return ((char *) haystack);
-	while (haystack[i])
+	if (c >= 32 && c <= 126)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && haystack[i + j] && needle[j])
-		{
-			if (needle[j + 1] == '\0')
-				return ((char *)(haystack + i));
-			j++;
-		}
-		i++;
+		return (c);
 	}
-	return (NULL);
+	return (0);
 }

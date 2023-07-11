@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:33:30 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/10 14:45:16 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 11:00:19 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:22:52 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (c >= 65 && c <= 90)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (needle[i] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
 	{
-		c = c + 97 - 65;
+		j = 0;
+		while (haystack[i + j] == needle[j]
+			&& (i + j) < len && haystack[i + j] != '\0')
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)(haystack + i));
+			j++;
+		}
+		i++;
 	}
-	return (c);
+	return (NULL);
 }

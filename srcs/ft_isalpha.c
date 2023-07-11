@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 13:14:17 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 13:17:42 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 00:11:46 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:22:21 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_isalpha(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == c)
-			return ((char *)(s + i));
-		i--;
-	}
-	return (NULL);
+	if (c >= 65 && c <= 90)
+		return (1);
+	else if (c >= 97 && c <= 122)
+		return (1);
+	return (0);
 }

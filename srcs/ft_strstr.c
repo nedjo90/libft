@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 00:02:12 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 00:04:56 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 13:00:08 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:22:59 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else if (c >= 65 && c <= 90)
-		return (1);
-	else if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (needle[i] == '\0')
+		return ((char *) haystack);
+	while (haystack[i])
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && haystack[i + j] && needle[j])
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)(haystack + i));
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }

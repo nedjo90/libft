@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 15:19:01 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/10 15:24:37 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/11 13:14:17 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:22:41 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		return (c);
+		if (s[i] == c)
+			return ((char *)(s + i));
+		i++;
 	}
-	return (0);
+	if (s[i] == c)
+		return ((char *)(s + i));
+	return (NULL);
 }

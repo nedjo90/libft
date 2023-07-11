@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 10:55:35 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 10:55:36 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/10 14:33:30 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/11 15:23:03 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+	{
+		c = c + 97 - 65;
+	}
+	return (c);
 }
