@@ -6,7 +6,7 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 15:33:28 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/11 15:55:14 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	(void)argc;
-	printf("strrchr  = %s\nft_strrchr = %s", strrchr(argv[1], (int)(argv[2][0])), 
-		ft_strrchr(argv[1], (int)(argv[2][0])));
+	printf("strlen  = %zu\nft_strlen = %zu", strlen(argv[1]), 
+		ft_strlen(argv[1]));
 	return (0);
 }

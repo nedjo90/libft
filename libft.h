@@ -6,7 +6,7 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:46:50 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 15:41:05 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/11 15:55:46 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *s);
 
 #endif
