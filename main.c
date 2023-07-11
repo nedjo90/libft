@@ -6,7 +6,7 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 11:17:31 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/11 12:59:03 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strnstr(const char *haystack, char *needle, size_t len);
+char	*ft_strstr(const char *haystack, const char *needle);
 
 int	main(int argc, char **argv)
 {
 	(void)argc;
-	printf("strnstr  = %s\nft_strnstr = %s", strnstr(argv[1], argv[2], atoi(argv[3])), 
-		ft_strnstr(argv[1], argv[2], atoi(argv[3])));
+	printf("strstr  = %s\nft_strstr = %s", strstr(argv[1], argv[2]), 
+		ft_strstr(argv[1], argv[2]));
 	return (0);
 }
