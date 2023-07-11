@@ -6,11 +6,13 @@
 #    By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 15:27:46 by necatihan         #+#    #+#              #
-#    Updated: 2023/07/11 15:32:17 by necatihan        ###   ########.fr        #
+#    Updated: 2023/07/11 15:42:31 by necatihan        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= 
+SRCS			= ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strchr.c \
+						ft_strcmp.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strstr.c ft_tolower.c \
+						ft_toupper.c
 OBJS			= $(SRCS:.c=.o)
 
 CC				= gcc
