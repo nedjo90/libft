@@ -6,7 +6,7 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 00:15:58 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 15:22:13 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/11 15:29:23 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_atoi(const char *str)
 	int	res;
 
 	i = 0;
+	res = 0;
+	s = 1;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == 43 || str[i] == 45)

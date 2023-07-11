@@ -5,42 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/23 12:46:09 by nhan              #+#    #+#              #
-#    Updated: 2023/07/11 15:23:30 by necatihan        ###   ########.fr        #
+#    Created: 2023/07/11 15:27:46 by necatihan         #+#    #+#              #
+#    Updated: 2023/07/11 15:32:17 by necatihan        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: nhan <marvin@42.fr>                        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/23 12:46:09 by nhan              #+#    #+#              #
-#    Updated: 2023/06/27 00:06:19 by nhan             ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SRCS			= 
+OBJS			= $(SRCS:.c=.o)
 
-CC = gcc
-SRCS = srcs/$(wildcard *.c)
-LIB = libft.a
-INCDIRS = libft.h
-CFLAGS = -Wall -Wextra -Werror -I $(INCDIRS)
-OBJ = $(patsubst %.c, %.o, $(SRCS))
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-all : ${LIB}
+NAME			= libft.a
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+all:			$(NAME)
 
-$(LIB) : $(OBJ)
-	ar rcs $(LIB) $(OBJ)
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
-clean :
-	rm -f $(OBJ)
+clean:
+				$(RM) $(OBJS)
 
-fclean : clean
-	rm -f $(LIB)
+fclean:			clean
+				$(RM) $(NAME)
 
-re : fclean all
+re:				fclean $(NAME)
+
+.PHONY:			all clean fclean re
