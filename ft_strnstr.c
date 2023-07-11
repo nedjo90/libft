@@ -6,17 +6,18 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 11:00:19 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 11:33:22 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/11 12:15:37 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (needle[i] == '\0')
@@ -27,11 +28,9 @@ char	*ft_strnstr(const char *haystack, char *needle, size_t len)
 		if (haystack[i] == needle[j])
 		{
 			while (haystack[i + j] == needle[j]
-				&& i + j < len)
+				&& (i + j) < len && haystack[i + j] != '\0')
 			{
-				if (haystack[i + j] == '\0')
-					return (NULL);
-				else if (needle[j] == '\0')
+				if (needle[j + 1] == '\0')
 					return ((char *)(haystack + i));
 				j++;
 			}
