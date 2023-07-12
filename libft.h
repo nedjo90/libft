@@ -6,7 +6,7 @@
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:46:50 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/11 15:55:46 by necatihan        ###   ########.fr       */
+/*   Updated: 2023/07/12 11:56:03 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
+char	*ft_strcat(char *s1, const char *s2);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
 
 #endif

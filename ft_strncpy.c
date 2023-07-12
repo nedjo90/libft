@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: necatihan <necatihan@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:53:42 by necatihan         #+#    #+#             */
-/*   Updated: 2023/07/12 11:45:47 by necatihan        ###   ########.fr       */
+/*   Created: 2023/07/12 11:54:52 by necatihan         #+#    #+#             */
+/*   Updated: 2023/07/12 11:55:41 by necatihan        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int	main(int argc, char **argv)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	(void)argc;
-	
-	printf("strncat  = %s\nft_strncat = %s", strncat(argv[1], argv[2], atoi(argv[3])), 
-		ft_strncat(argv[1], argv[2], atoi(argv[3])));
-	return (0);
-}
+	size_t	i;
 
+	i = 0;
+	while (src[i] && i < len)
+		dst[i] = src[i++];
+	if (i < len)
+		dst[i] = '\0';
+	return (dst);
+}
